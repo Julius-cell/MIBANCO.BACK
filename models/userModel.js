@@ -8,6 +8,7 @@ const userSchema = new Schema({
     maxlength: [15, 'A User name must have less or equal then 15 characters'],
     minlength: [3, 'A Tour name must have more or equal then 3 characters'],
     trim: true,
+    unique: [true, 'Name already registered']
   },
   email: {
     type: String,
@@ -20,6 +21,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, 'Provide a R.U.T.'],
     trim: true,
+    unique: [true, 'Email already registered']
   },
   phone: {
     type: Number,
@@ -37,6 +39,7 @@ const userSchema = new Schema({
   numberAccount: {
     type: Number,
     required: [true, 'Provide a number account'],
+    unique: [true, 'Account already registered']
   },
 });
 
