@@ -12,7 +12,7 @@ const cors = require('cors');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/userRoutes');
-const transferRouter = require('./routes/transferRouter');
+const transferRouter = require('./routes/transferRoutes');
 
 const app = express();
 
