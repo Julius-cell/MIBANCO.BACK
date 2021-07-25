@@ -12,7 +12,6 @@ exports.getTransfers = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    // requestedAt: req.requestTime,
     results: transfers.length,
     data: {
       transfers,
@@ -21,9 +20,7 @@ exports.getTransfers = catchAsync(async (req, res, next) => {
 });
 
 exports.createTransfer = catchAsync(async (req, res, next) => {
-  const transfer = await Transfer.create({
-    // TODO: Fix this
-  });
+  const transfer = await Transfer.create(req.body);
 
   res.status(201).json({
     status: 'success',
