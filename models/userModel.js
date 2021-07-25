@@ -25,6 +25,10 @@ const userSchema = new Schema({
     type: Number,
     required: [true, 'Provide a phone number'],
   },
+  bank: {
+    type: String,
+    required: [true, 'Provide a bank'],
+  },
   account: {
     type: String,
     required: [true, 'Provide a type account'],
