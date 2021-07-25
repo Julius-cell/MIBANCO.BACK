@@ -15,19 +15,14 @@ exports.getTransfers = catchAsync(async (req, res, next) => {
     // requestedAt: req.requestTime,
     results: users.length,
     data: {
-      users,
+      transfers,
     },
   });
 });
 
 exports.createTransfer = catchAsync(async (req, res, next) => {
   const transfer = await Transfer.create({
-    name: req.body.name,
-    email: req.body.email,
-    rut: req.body.rut,
-    phone: req.body.phone,
-    account: req.body.account,
-    numberAccount: req.body.numberAccount,
+    // TODO: Fix this
   });
 
   res.status(201).json({
