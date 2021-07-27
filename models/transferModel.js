@@ -5,10 +5,10 @@ const transferSchema = new Schema({
     type: Number,
     required: [true, 'Provide an amount'],
   },
-  user: [{
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
-  }],
+  },
 });
 
 
