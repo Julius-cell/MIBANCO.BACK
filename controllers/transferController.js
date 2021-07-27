@@ -1,11 +1,11 @@
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('../utils/appError');
 const Transfer = require('../models/transferModel');
-const User = require('../models/userModel');
 
 
 exports.getTransfers = catchAsync(async (req, res, next) => {
-  const transfers = await Transfer.find();
+  const transfers = await Transfer.find().
+  populate('user');
 
   if (!transfers) {
     return next(new AppError('An error occurred while trying to request the data', 500));
@@ -27,8 +27,6 @@ exports.createTransfer = catchAsync(async (req, res, next) => {
 
   res.status(201).json({
     status: 'success',
-    data: {
-      transfer
-    }
+    data: transfer
   });
 });
