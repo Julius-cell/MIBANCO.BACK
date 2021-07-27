@@ -14,9 +14,7 @@ exports.getTransfers = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     results: transfers.length,
-    data: {
-      transfers,
-    },
+    data: transfers
   });
 });
 
