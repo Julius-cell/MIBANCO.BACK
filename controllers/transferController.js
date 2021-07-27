@@ -5,7 +5,7 @@ const Transfer = require('../models/transferModel');
 
 exports.getTransfers = catchAsync(async (req, res, next) => {
   const transfers = await Transfer.find().
-  populate('user');
+  populate('user', 'name rut bank account');
 
   if (!transfers) {
     return next(new AppError('An error occurred while trying to request the data', 500));
