@@ -18,7 +18,7 @@ const DB = process.env.DATABASE.replace(
 console.log(DB);
 
 // DB CONNECTION
-(async () => {
+const connectDB = async () => {
   try {
     await mongoose.connect(DB, {
       useUnifiedTopology: true,
@@ -30,7 +30,9 @@ console.log(DB);
   } catch (err) {
     console.log('Failed to connect to MongoDB', err);
   }
-})();
+}
+connectDB();
+
 
 // PORT
 const port = process.env.PORT || 3000;
