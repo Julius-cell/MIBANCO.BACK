@@ -9,7 +9,6 @@ const compression = require('compression');
 const cors = require('cors');
 
 // FILES REQUIRED
-const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/userRoutes');
 const transferRouter = require('./routes/transferRoutes');
@@ -58,7 +57,7 @@ app.use('/v1/transfer', transferRouter);
 
 // --------------------- ROUTE ERROR ---------------------
 app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+  res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
 // -------------------------------------------------------
 
