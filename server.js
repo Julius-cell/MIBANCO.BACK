@@ -18,16 +18,20 @@ const DB = process.env.DATABASE.replace(
 console.log(DB);
 
 // DB CONNECTION
-mongoose
-  .connect(DB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
-  .then(() => console.log('DB connection successful!'));
+(async () => {
+  try {
+    await mongoose.connect(DB, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    })
+    console.log('DB connection successful!');
+  } catch (err) {
+    console.log('Failed to connect to MongoDB', err);
+  }
+})();
 
-  
 // PORT
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
