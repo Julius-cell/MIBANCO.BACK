@@ -4,8 +4,7 @@
   "description": "challenge app for ripley",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "dev": "set NODE_ENV=development && nodemon server.js",
+    "start": "set NODE_ENV=development && nodemon server.js",
     "prod": "set NODE_ENV=production && nodemon server.js"
   },
   "repository": {
