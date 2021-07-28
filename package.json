@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "challenge app for ripley",
   "main": "app.js",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "start": "node server.js",
     "start:prod": "set NODE_ENV=production && nodemon server.js",
