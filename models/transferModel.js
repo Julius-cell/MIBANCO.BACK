@@ -9,6 +9,8 @@ const transferSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+}, {
+  bufferCommands: false
 });
 
 

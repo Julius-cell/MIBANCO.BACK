@@ -43,6 +43,8 @@ const userSchema = new Schema({
     required: [true, 'Provide a number account'],
     unique: [true, 'Account already registered']
   },
+}, {
+  bufferCommands: false
 });
 
 
