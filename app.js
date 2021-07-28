@@ -56,7 +56,7 @@ app.use('/v1/transfer', transferRouter);
 // -------------------------------------------------------
 
 // --------------------- ROUTE ERROR ---------------------
-app.all('*', (req, res, next) => {
+app.use('/*', (req, res, next) => {
   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
 // -------------------------------------------------------
