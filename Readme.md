@@ -32,6 +32,15 @@ Si quieres ver este proyecto en funcionamiento puedes acceder con el siguiente e
 
 ---
 
+## Deploy
+
+- Build your front application
+- Copy the content of dist folder(Front) into public folder(Back) 
+- Push your changes
+- Deploy you updated repository
+
+---
+
 ## Learn More
 
 - To learn Express, check out the [Express documentation](http://expressjs.com/).
