@@ -43,10 +43,13 @@ const userSchema = new Schema({
     required: [true, 'Provide a number account'],
     unique: [true, 'Account already registered']
   },
-});
+}, {
+  bufferCommands: false
+}
+);
 
 
-userSchema.method('toJSON', function() {
+userSchema.method('toJSON', function () {
   const { __v, ...object } = this.toObject();
   return object;
 })
